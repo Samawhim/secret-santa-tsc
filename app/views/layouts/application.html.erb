@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SecretSantaTsc</title>
+    <title>SecretSanta</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag asset_path('santa.png') %>
   </head>
 
   <body>

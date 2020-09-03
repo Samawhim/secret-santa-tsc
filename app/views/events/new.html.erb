@@ -1,0 +1,30 @@
+<div class='container'>
+  <div class='event'>
+    <h2>offrez, recevez 🎁</h2>
+    <h1>mon secret santa</h1>
+    <%= simple_form_for @event do |f| %>
+      <div class='form'>
+        <%= f.input :title, placeholder: "Nommez votre événement", label: "Nom event" %>
+        <%= f.input :max_price, placeholder: "Prix maximum du cadeau", label: "Prix max (€)" %>
+      </div>
+      <div id="fieldsetContainer">
+        <%= f.simple_fields_for :participants do |p| %>
+          <div class="fieldset" id=<%= p.index %>>
+            <p><%= p.index + 1 %></p>
+            <%= p.input :name, placeholder: "Nom", label: false %>
+            <%= p.input :email, placeholder: "e-mail", label: false %>
+            <%# <div style="cursor: pointer;" id="delete">supprimer</div> %>
+             <div id='del-<%=p.index%>' class='del-form'><i class="fas fa-minus-circle">-</i></div>
+            <%# <%= link_to @participant_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+            <%# <% end %>
+            
+          </div class="fieldset">
+        <% end %>
+      </div>
+      <div class='buttons'>
+        <div id="addParticipant">Add a participant</div>
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
