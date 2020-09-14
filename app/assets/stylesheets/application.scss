@@ -1,4 +1,5 @@
 // External libraries
+@import "font-awesome-sprockets";
 @import "font-awesome";
 
 .container {
@@ -173,10 +174,6 @@ abbr {
   color: rgb(255, 89, 89);
   font-size: 20px;
   font-weight: 900;
-  background-color: white;
-  border: 1px solid rgb(255, 89, 89);
-  padding: 1px;
-  border-radius: 30px;
   text-align: center;
   align-items: center;
 }

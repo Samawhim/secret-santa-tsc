@@ -14,12 +14,14 @@ class EventsController < ApplicationController
   end
   
   def create
+    @events = Event.all
     @event = Event.new(event_params)
     if @event.save # && @participants.count > 3
       flash[:alert] = "L'événement s'est bien crée. Un email vous a été envoyé"
       @participants = make_santas(@event.participants.all)
       @participants.each do |participant|
-        EventMailer.with(participant: participant.id).santa_email(participant, participant.santa).deliver_now
+        # EventMailer.with(participant: participant.id).santa_email(participant, participant.santa).deliver_now
+        EventMailer.santa_email(participant, participant.santa).deliver_now
       end
       @event.destroy
       redirect_to root_path
@@ -44,7 +46,7 @@ class EventsController < ApplicationController
   
   def make_santas(list_of_participants)
     participants = list_of_participants.to_a
-    santas = participants.dup   
+    santas = participants.dup 
     
     participants.each do |participant|
       n = rand(santas.count)

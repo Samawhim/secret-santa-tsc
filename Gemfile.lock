@@ -103,6 +103,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
     public_suffix (4.0.6)
     puma (4.3.5)
       nio4r (~> 2.0)
@@ -206,9 +207,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  font-awesome-sass (~> 5.12.0)
+  font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
@@ -216,7 +218,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
+  sqlite3
   turbolinks (~> 5)
   web-console (>= 3.3.0)
   webdrivers
